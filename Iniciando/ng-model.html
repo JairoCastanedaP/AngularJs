@@ -9,25 +9,38 @@
 </head>
 <body>
     <div class="container">
-        <h1>{{"Hola Mundo desde AngularJS"}}</h1>
-        <h1>Filtros::Filter</h1>
-
-        <h3>en angularJs</h3>
-
-        <p>texto{{"JaIro"}}</p>
-        <br>
-        <p>Filtro de texto: {{"JaIro" | uppercase}}</p>
-        <br>
-        <p>Filtro de texto: {{"JaIro" |lowercase}}</p>
-        <br>
-        
         <p>
-            Moneda: {{1350}}
+            <h1>ng-model</h1>
+            Su nombre:{{nombre |uppercase}}
             <br>
-            Moneda: {{1350 |currency}}
-            <br>
-            Moneda: {{1350|currency:'Col. '}}
+            <input type="text"   ng-model="nombre"  class="form-control" placeholder="Ingrese su nombre" ng-model="expression">
+    
         </p>
+        <p>
+            Seleccione el pais:{{pais}}
+            <select class="form-control" ng-model="pais">
+                <option value="1">Colombia</option>
+                <option value="2">México</option>
+                <option value="3">Costa Rica</option>
+            </select>
+        </p>
+        <p>
+            Selecione una opción: {{opt1}}{{opt2}}
+            <br>
+            <input type="checkbox" ng-model="opt1"> Opción 1
+            <br>
+            <input type="checkbox" ng-model="opt2"> Opción 2
+        </p>
+
+        <p>
+            Seleccione el Genero: {{genero}}
+            <br>
+            <input type="radio" ng-model="genero" value="M">Masculino
+            <br>
+            <input type="radio" ng-model="genero" value="F">Femenino
+            <br>
+        </p>
+        
     </div>
     
 </body>
