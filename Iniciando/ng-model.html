@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+    <meta http-equiv='Content-Type' content='text/html' charset="UTF-8">
+    <title>Page Title</title>
+    <link rel='stylesheet' type='text/css' media='screen' href='css/bootstrap.min.css'>
+    
+    <script src="js/lib/angular.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>{{"Hola Mundo desde AngularJS"}}</h1>
+        <h1>Filtros::Filter</h1>
+
+        <h3>en angularJs</h3>
+
+        <p>texto{{"JaIro"}}</p>
+        <br>
+        <p>Filtro de texto: {{"JaIro" | uppercase}}</p>
+        <br>
+        <p>Filtro de texto: {{"JaIro" |lowercase}}</p>
+        <br>
+        
+        <p>
+            Moneda: {{1350}}
+            <br>
+            Moneda: {{1350 |currency}}
+            <br>
+            Moneda: {{1350|currency:'Col. '}}
+        </p>
+    </div>
+    
+</body>
+</html>
