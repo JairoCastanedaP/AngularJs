@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html ng-app="universidadApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuaderno Alumnos</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<body ng-controller="listadoCtrl">
+    <h1>Cuaderno Alumnos</h1>
+<!--    
+<div class="form-group">
+    <div class="col-md-6">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Telefono</th>
+                    <th>Celular</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="alumno in alumnos">
+                    <td>{{alumno.nombre}}</td>
+                    <td>{{alumno.telefono}}</td>
+                    <td>{{alumno.celular}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    </div>    
+    -->
+    <br>
+        
+            
+            <button ng-click="ShowForm()" ng-hide="formVisibility" class="form-control">Añadir Contacto</button>
+        
+        </div>
+
+        <div ng-show="formVisibility">
+               
+            <h1>Añadir un alumno</h1>
+            Nombre: <input type="text" ng-model="nuevoAlumno.nombre"/>
+            Telefono: <input type="text" ng-model="nuevoAlumno.telefono"/>
+            Celular: <input type="text" ng-model="nuevoAlumno.celular">
+            
+            <button ng-click="Save()">Guardar</button>
+            
+        </div>
+    <script src="js/lib/angular.min.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
