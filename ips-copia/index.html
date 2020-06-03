@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html ng-app="prueba">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap.css.map">
+    <link rel="stylesheet" href="css/styles.css">
+      <!-- Font Awesome -->
+      <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+
+    <title>Document</title>
+</head>
+
+<body ng-controller="myServiceCtrl">
+    <div class="row" >
+        <div class="col-sm-12 col-md-12 col-xl-12 col-lg-12 text-white bg-dark text-center">
+            <h1>PLANTA DE PRODUCCIÓN</h1>
+        </div>
+    </div>
+    <div class="container">
+
+                <form ng-controller="mainCtrl" name="formulario" ng-submit="guardar_datos(formulario.$valid)" novalidate="novalidate">
+                    <br>
+                    <div class="row">
+                        <div class="col-12 col-md-6 col-lg-4 col-sm-12"><h2><span class="badge badge-secondary">ID : {{25}}</span></h2></div>
+                        <div class="col-12 col-md-6 col-lg-4 col-sm-12"><h3><span class="badge badge-secondary">Fecha Fin: 28/05/2020 10:00</span></h3></div>
+                        <div class="col-12 col-md-6 col-lg-4  col-sm-12"><h3><span class="badge badge-secondary">Fecha Inicio : 28/05/2020 8:00</span></h3></div>
+                        <div class="col-12 col-md-6 col-lg-4  col-sm-12"><h2><span class="badge badge-secondary">REFERENCIA: {{14}}</span></h2></div>
+                        
+                        <div class="col-12 col-md-6 col-lg-4  col-sm-12"><label for="operario">Operario</label>
+                            <select class="form-control" id="operario" ng-model="formData.operario">
+                                <option value=""></option>
+                                <option value="Pedro">Pedro</option>
+                                <option value="Gloria">Gloria</option>
+                                <option value="Gloria">Laura</option>
+                                <option value="Francisco">Francisco</option>
+                            </select></div>
+
+                            <div class="form-group col-12 col-md-6 col-lg-4  col-sm-12" ng-class="{
+                                'has-error': !formulario.gastos.$valid && !formulario.$pristine,
+                                'has-success':formulario.gastos.$valid && !formulario.$pristine}">
+                                <label for="gastos">Gastos Adicionales</label>
+        
+                                <input type="number" id="gastos" class="form-control" ng-model="formData.gastos" name="gastos"
+                                    required="required">
+        
+                                <p class="help-block" ng-hide="formulario.gastos.$valid || formulario.$pristine">Este campo es
+                                    requerido</p>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-4  col-sm-12"><h3><span class="badge badge-secondary">Piezas Buenas: {{25}}</span></h3></div>
+                        <div class="col-12 col-md-6 col-lg-4  col-sm-12"><h3><span class="badge badge-secondary">Piezas Malas: {{4}}</span></h3></div>
+
+                    </div>
+                    
+                    <div clas></div>
+                   
+
+                    <div class="form-group" ng-class="{
+                        'has-error': !formulario.observaciones.$valid && !formulario.$pristine,
+                        'has-success':formulario.observaciones.$valid && !formulario.$pristine}">
+                        <h3><span class="badge bg-warning">Observaciones:</span></h3>
+                        <textarea class="form-control" ng-model="formData.observaciones" name="observaciones" id="observaciones" cols="10" rows="5"
+                        required="required"></textarea>
+                        
+                        <p class="help-block" ng-show="formulario.observaciones.$error.required">Este campo es requerido</p>
+                        <p class="help-block" ng-show="formulario.observaciones.$error.observaciones">El campo no tiene el formato</p>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary"> Guardar</button>
+                    <br><br>
+                </form>
+
+
+            <!-- Bloque de codigo 
+            <div class="col-md-5">
+                <label>Estructura de datos</label>
+                <pre>{{formulario | json}}</pre>
+            </div>-->
+
+
+        <div class="row">
+
+        </div>
+
+        <div class="row">
+            <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 text-center">
+                <button ng-click="doJSONPRequest()" class="btn btn-info">Hacer petición JSONP</button>
+            </div>
+
+            <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 text-center">
+
+                <h2><span class="badge badge-secondary">N° Registros: {{cantidad}}</span></h2>
+            </div>
+        </div>
+
+        <div class="row" ng-controller="myServiceCtrl">
+            <div class="class col-sm-12">
+                <table class="table ">
+                    <thead class="thead-dark text-center">
+                        <tr>
+                            <td>ID</td>
+                            <td>site_ID</td>
+                            <td>date</td>
+                            <td>author</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="n in details.posts">
+                            <td class="text-center">{{n.ID }}</td>
+                            <td class="text-center">{{n.site_ID |currency}}</td>
+                            <td class="text-center">{{n.date }}</td>
+                            <td class="text-center">{{n.author.email}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12 text-white bg-dark text-center">
+            <h4>Desarrollado por Jairo Castañeda</h4>
+            <h5>Todos los derechos reservados</h5>
+        </div>
+    </div>
+
+    <script src="js/lib/angular.min.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
